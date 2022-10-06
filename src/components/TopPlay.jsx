@@ -89,7 +89,7 @@ const TopPlay = () => {
           </Link>
         </div>
 
-        <Swiper slidesPerView="auto" spaceBetween={15}  centeredSlides centeredSlidesBounds modules={[FreeMode]} className="my-4">
+        <Swiper slidesPerView="auto" spaceBetween={15}  centeredSlides centeredSlidesBounds modules={[FreeMode]} className="my-4 lg:mb-32">
             {topPlays?.map((song, i) => (
               <SwiperSlide key={song?.key} style={{ width: '25%', height: 'auto'}} className="shadow-lg rounded-full animate-slideright">
                 <Link to={`/artists/${song?.artists[0].adamid}`}>

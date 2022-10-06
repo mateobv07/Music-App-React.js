@@ -10,15 +10,15 @@ const AroundYou = () => {
     const { activeSong, isPlaying } = useSelector((state) => state.player);
     const { data, isFetching, error } = useGetSongsByCountryQuery(country); 
 
-    console.log(country)
+
     useEffect(() => {
         if (!country) {
             axios.get(`https://geo.ipify.org/api/v2/country?apiKey=at_eVcsmvL1xQhOJNabSRnRJumnBKees`)
                 .then((res) => setCountry(res?.data?.location?.country))
                 .catch((err) => console.log(err))
                 .finally(() => setLoading(false));
-            console.log('TESTING');
         }
+
     }, [country]);
 
     if(isFetching && loading) return <Loader title="Loading songs around you" /> ;
